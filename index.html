@@ -3,83 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            font-weight: 700;
-        }
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .social-links {
-            margin: 30px 0;
-        }
-        .social-links a {
-            font-size: 28px;
-            margin: 0 15px;
-            color: #34495e;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: #3498db;
-        }
-        .divider {
-            margin: 20px 0;
-            color: #ccc;
-        }
-        .resume-button {
-            display: inline-block;
-            padding: 12px 25px;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .resume-button:hover {
-            background-color: #2980b9;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-    </style>
+    <title>Backend Architect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>My Website is Under Construction</h1>
-        <p>I'm working hard to bring you something amazing. Please check back soon!</p>
-        <p>In the meantime, feel free to reach out to me:</p>
-        <div class="social-links">
-            <a href="mailto:samarthrawat1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/samarthrawat1" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-star">*</span>logo
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Education & Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <p class="divider">or</p>
-        <div>
-            <a href="resume.pdf" target="_blank" class="resume-button">View My Resume</a>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-text">
+                <h1>Hello, I'm a<br>Backend Architect</h1>
+                <p>As a seasoned Backend Software Developer, I specialize in crafting robust, scalable, and highly performant systems. My expertise spans asynchronous programming with Async Django, orchestrating microservices with Kubernetes, and implementing intelligent autoscaling solutions using Knative and KEDA. I'm passionate about optimizing cloud infrastructure, particularly within AWS EKS environments, to deliver efficient and resilient backend architectures.</p>
+                <div class="tags">
+                    <span class="tag">Async Django</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Knative</span>
+                    <span class="tag">KEDA</span>
+                    <span class="tag">AWS EKS</span>
+                    <span class="tag">Scalable Architectures</span>
+                    <span class="tag">Microservices</span>
+                    <span class="tag">Cloud Computing</span>
+                </div>
+                <a href="#" class="btn">Explore My Projects</a>
+            </div>
+            <div class="hero-image">
+            </div>
+        </section>
+
+        <section class="expertise container">
+            <h2>My Core Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-database"></i>
+                    <span>Django</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fab fa-kubernetes"></i>
+                    <span>Kubernetes</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>CI/CD</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>Problem Solving</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-network-wired"></i>
+                    <span>Networking</span>
+                </div>
+                <div class="expertise-card">
+                    <i class="fas fa-sitemap"></i>
+                    <span>System Design</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">Quick Links</a>
+                <a href="#">Legal</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
-    </div>
+    </footer>
+
 </body>
 </html>
