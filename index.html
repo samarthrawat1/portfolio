@@ -12,9 +12,10 @@
             background-color: #f4f7f6;
             color: #333;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
             text-align: center;
         }
@@ -35,23 +36,40 @@
         }
         .social-links {
             margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
         .social-links a {
             font-size: 28px;
-            margin: 0 15px;
             color: #34495e;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .social-links a:hover {
             color: #3498db;
+            transform: translateY(-3px);
         }
         .divider {
-            margin: 20px 0;
+            margin: 25px 0;
             color: #ccc;
+            font-size: 14px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
         .resume-button {
-            display: inline-block;
-            padding: 12px 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 30px;
             background-color: #3498db;
             color: #fff;
             border-radius: 50px;
@@ -63,6 +81,52 @@
             background-color: #2980b9;
             color: #fff;
             transform: translateY(-2px);
+        }
+        .calendly-text {
+            margin-top: 40px;
+            color: #555;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .calendly-text:hover {
+            color: #3498db;
+        }
+        .calendly-text .calendly-link-text {
+            color: #3498db;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        .calendly-text:hover .calendly-link-text {
+            color: #2980b9;
+        }
+        .topics-text {
+            margin-top: 0px;
+            color: #666;
+            font-size: 14px;
+            font-style: italic;
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        .bmac-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 11px;
+            color: #999;
+            text-decoration: none;
+            transition: color 0.3s;
+            z-index: 1000;
+        }
+        .bmac-link:hover {
+            color: #3498db;
+        }
+        .bmac-link .bmac-text {
+            color: #ff813f;
+            font-weight: 700;
+        }
+        .bmac-link:hover .bmac-text {
+            color: #ff6b1a;
         }
     </style>
 </head>
@@ -77,9 +141,24 @@
             <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         </div>
         <p class="divider">or</p>
-        <div>
-            <a href="resume.pdf" target="_blank" class="resume-button">View My Resume</a>
+        <div class="button-group">
+            <a href="resume.pdf" target="_blank" class="resume-button">
+                <i class="fas fa-file-pdf"></i>
+                View My Resume
+            </a>
         </div>
     </div>
+    
+    <p class="calendly-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samarthrawat1/talk'}); return false;">
+        Wanna have a chat? <span class="calendly-link-text">Schedule a call on Calendly</span>
+    </p>
+    <p class="topics-text">
+        We can talk about Python, Cloud, Kubernetes, Music, Guitar, Harmonium, LLM, Anime, Chess, Any weird ideas that you might have, philosophy. Anything really! <br> P.S. I also make a good therapist.
+    </p>
+    <a href="https://buymeacoffee.com/samarthrawat1" target="_blank" class="bmac-link">
+        Help save the children! Buy me a beer so that they can't have it <span class="bmac-text">BMAC</span>
+    </a>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
