@@ -3,162 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <meta name="description" content="Samarth Rawat - Python Developer, Cloud Engineer, Musician, and Thinker. Explore my work, thoughts, and interests.">
+    <title>Samarth Rawat - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
-            font-weight: 700;
-        }
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-        .social-links {
-            margin: 30px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .social-links a {
-            font-size: 28px;
-            color: #34495e;
-            transition: color 0.3s, transform 0.2s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .social-links a:hover {
-            color: #3498db;
-            transform: translateY(-3px);
-        }
-        .divider {
-            margin: 25px 0;
-            color: #ccc;
-            font-size: 14px;
-        }
-        .button-group {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .resume-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 30px;
-            background-color: #3498db;
-            color: #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .resume-button:hover {
-            background-color: #2980b9;
-            color: #fff;
-            transform: translateY(-2px);
-        }
-        .calendly-text {
-            margin-top: 40px;
-            color: #555;
-            font-size: 16px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-        .calendly-text:hover {
-            color: #3498db;
-        }
-        .calendly-text .calendly-link-text {
-            color: #3498db;
-            font-weight: 700;
-            text-decoration: underline;
-        }
-        .calendly-text:hover .calendly-link-text {
-            color: #2980b9;
-        }
-        .topics-text {
-            margin-top: 0px;
-            color: #666;
-            font-size: 14px;
-            font-style: italic;
-            max-width: 600px;
-            padding: 0 20px;
-        }
-        .bmac-link {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            font-size: 11px;
-            color: #999;
-            text-decoration: none;
-            transition: color 0.3s;
-            z-index: 1000;
-        }
-        .bmac-link:hover {
-            color: #3498db;
-        }
-        .bmac-link .bmac-text {
-            color: #ff813f;
-            font-weight: 700;
-        }
-        .bmac-link:hover .bmac-text {
-            color: #ff6b1a;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>My Website is Under Construction</h1>
-        <p>I'm working hard to bring you something amazing. Please check back soon!</p>
-        <p>In the meantime, feel free to reach out to me:</p>
-        <div class="social-links">
-            <a href="mailto:samarthrawat1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://linkedin.com/in/samarthrawat1" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Samarth Rawat</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </div>
-        <p class="divider">or</p>
-        <div class="button-group">
-            <a href="resume.pdf" target="_blank" class="resume-button">
-                <i class="fas fa-file-pdf"></i>
-                View My Resume
-            </a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section style="text-align: center; padding: 3rem 0; margin-bottom: 3rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-dark);">Hi, I'm Samarth 👋</h1>
+                <p style="font-size: 1.5rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 400;">
+                    Python Developer | Cloud Engineer | Musician | Thinker
+                </p>
+                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">
+                    Building things with code, exploring the cloud, making music, and pondering life's big questions.
+                </p>
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <a href="resume.pdf" target="_blank" class="resume-button">
+                        <i class="fas fa-file-pdf"></i> View Resume
+                    </a>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                    <a href="about.html#experience" class="btn btn-outline">
+                        <i class="fas fa-briefcase"></i> Professional Experience
+                    </a>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="mailto:samarthrawat1@gmail.com" title="Email" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/samarthrawat1" target="_blank" title="LinkedIn" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://fiverr.com/samarthrawat1" target="_blank" title="Fiverr" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
+                        <i class="fab fa-fiverr"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Professional Experience Preview -->
+            <section style="margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0; font-size: 2rem;">Professional Experience</h2>
+                    <a href="about.html#experience" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
+                        View Full Experience <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+                <div class="grid grid-2" style="gap: 2rem;">
+                    <!-- Tensorfuse -->
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Founding Engineer | Infrastructure & Backend</h3>
+                                <p style="color: var(--primary-color); font-weight: 700; margin: 0;">Tensorfuse (YC W24)</p>
+                            </div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem; white-space: nowrap;">July 2025 – Present</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Bengaluru, IN</p>
+                        <p style="margin-bottom: 1rem;">Designed and implemented scalable backend on Async Django, integrated Kubernetes extensions (Knative & KEDA) for GPU-based autoscaling, reducing infrastructure costs significantly.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tech-badge" style="font-size: 0.75rem;">Django</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">Kubernetes</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">AWS</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">vLLM</span>
+                        </div>
+                    </div>
+
+                    <!-- AlchemystAI -->
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Founding Engineer | DevOps & Cloud</h3>
+                                <p style="color: var(--primary-color); font-weight: 700; margin: 0;">AlchemystAI</p>
+                            </div>
+                            <span style="color: var(--text-muted); font-size: 0.9rem; white-space: nowrap;">April 2024 – June 2025</span>
+                        </div>
+                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Bengaluru, IN</p>
+                        <p style="margin-bottom: 1rem;">Collaborated to secure $300k funding, orchestrated multi-cluster GKE deployments, managed DevOps operations for LLM hosting. Reduced onboarding time by 33%.</p>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                            <span class="tech-badge" style="font-size: 0.75rem;">FastAPI</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">Kubernetes</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">GKE</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">RabbitMQ</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Preview -->
+            <section style="margin-bottom: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 style="margin: 0; font-size: 2rem;">Featured Projects</h2>
+                    <a href="projects.html" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
+                        View All Projects <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </a>
+                </div>
+                <div class="grid grid-3" style="gap: 1.5rem;">
+                    <div class="project-card">
+                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-brain"></i> AxisHR</h3>
+                        <p style="font-size: 0.9rem;">LLM-based candidate screening platform with automated CV screening and pre-interview question generation.</p>
+                        <div class="project-tech" style="margin-top: 1rem;">
+                            <span class="tech-badge" style="font-size: 0.75rem;">Django</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">LLM</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">GCP</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-home"></i> Redfin Scraper</h3>
+                        <p style="font-size: 0.9rem;">Web scraping platform that extracts property data from Redfin.com with Excel export and Zapier integration.</p>
+                        <div class="project-tech" style="margin-top: 1rem;">
+                            <span class="tech-badge" style="font-size: 0.75rem;">Flask</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">SQLite3</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">Zapier</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-robot"></i> Reservation Bot</h3>
+                        <p style="font-size: 0.9rem;">Automated Spanish consulate reservation booking system with email notifications and continuous monitoring.</p>
+                        <div class="project-tech" style="margin-top: 1rem;">
+                            <span class="tech-badge" style="font-size: 0.75rem;">Python</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">Selenium</span>
+                            <span class="tech-badge" style="font-size: 0.75rem;">Azure</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section style="margin-bottom: 3rem;">
+                <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Client Reviews</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
+                    <!-- Review 1 -->
+                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
+                            "Samarthrawat exceeded expectations. I truly appreciated his dedication, diligence, and professionalism. A freelancer with that core of providing excellence is hard to come by. A million times THANK YOU!!!!"
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
+                                JK
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem;">Jen Kellams</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States • Repeat Client</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
+                            "I could not be happier working with Sam! His program did exactly what we hoped it would. He was kind and patient explaining the code. I'll be telling everyone to use him for all coding needs."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
+                                JK
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem;">Jen Kellams</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States • Repeat Client</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                        </div>
+                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
+                            "I had an amazing experience! His attention to detail and code expertise were top-notch. He consistently went ABOVE AND BEYOND."
+                        </p>
+                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
+                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
+                                L
+                            </div>
+                            <div>
+                                <div style="font-weight: 700; font-size: 0.9rem;">lsteezy</div>
+                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://fiverr.com/samarthrawat1" target="_blank" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
+                        <i class="fab fa-fiverr"></i> View More Reviews on Fiverr
+                    </a>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section>
+                <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                    <a href="about.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
+                        <i class="fas fa-user" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        <div style="font-weight: 700; margin-bottom: 0.25rem;">About</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Learn more about me</div>
+                    </a>
+                    <a href="projects.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
+                        <i class="fas fa-code" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Projects</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">See my work</div>
+                    </a>
+                    <a href="blog.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
+                        <i class="fas fa-book" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Blog</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">Read my thoughts</div>
+                    </a>
+                    <a href="hobbies.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
+                        <i class="fas fa-heart" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
+                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Hobbies</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);">My interests</div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer Note -->
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted); font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">
+                We can talk about Python, Cloud, Kubernetes, Music, Guitar, Harmonium, LLM, Anime, Chess, weird ideas, philosophy. Anything really! 
+                <strong>P.S. I also make a good therapist.</strong>
+            </p>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <p class="calendly-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samarthrawat1/talk'}); return false;" style="cursor: pointer; color: var(--text-muted);">
+                    Wanna have a chat? <span class="calendly-link-text">Schedule a call on Calendly</span>
+                </p>
+            </div>
         </div>
-    </div>
-    
-    <p class="calendly-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samarthrawat1/talk'}); return false;">
-        Wanna have a chat? <span class="calendly-link-text">Schedule a call on Calendly</span>
-    </p>
-    <p class="topics-text">
-        We can talk about Python, Cloud, Kubernetes, Music, Guitar, Harmonium, LLM, Anime, Chess, Any weird ideas that you might have, philosophy. Anything really! <br> P.S. I also make a good therapist.
-    </p>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="blog.html">Blog</a>
+                <a href="hobbies.html">Hobbies</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-text">&copy; 2024 Samarth Rawat. Built with curiosity and caffeine.</p>
+        </div>
+    </footer>
+
     <a href="https://buymeacoffee.com/samarthrawat1" target="_blank" class="bmac-link">
         Help save the children! Buy me a beer so that they can't have it <span class="bmac-text">BMAC</span>
     </a>
+
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script src="js/main.js"></script>
+    <style>
+        a[href*="about.html"]:hover,
+        a[href*="projects.html"]:hover,
+        a[href*="blog.html"]:hover,
+        a[href*="hobbies.html"]:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+    </style>
 </body>
 </html>
