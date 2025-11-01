@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="6; url=https://meet.google.com/chd-pyzz-gnu">
+    <title>Redirecting to Google Meet...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f7f6;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            padding: 40px;
+        }
+        .loading-circle {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 30px auto;
+        }
+        .circle-svg {
+            width: 150px;
+            height: 150px;
+            transform: rotate(-90deg);
+        }
+        .circle-bg {
+            fill: none;
+            stroke: #e0e0e0;
+            stroke-width: 8;
+        }
+        .circle-progress {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s linear;
+        }
+        .countdown-number {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            font-weight: bold;
+            color: #3498db;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // 6 second delay before redirect
+            let countdown = 6;
+            const totalTime = 6;
+            const circumference = 2 * Math.PI * 70; // 2 * PI * radius (70)
+            const progressCircle = document.querySelector('.circle-progress');
+            const countdownNumber = document.querySelector('.countdown-number');
+            
+            // Set initial stroke-dasharray and stroke-dashoffset
+            if (progressCircle) {
+                progressCircle.style.strokeDasharray = circumference;
+                progressCircle.style.strokeDashoffset = circumference;
+            }
+            
+            // Update countdown and circle progress every second
+            const countdownInterval = setInterval(() => {
+                countdown--;
+                
+                if (countdownNumber && countdown >= 0) {
+                    countdownNumber.textContent = countdown;
+                }
+                
+                if (progressCircle && countdown >= 0) {
+                    const progress = ((totalTime - countdown) / totalTime) * 100;
+                    const offset = circumference - (circumference * progress / 100);
+                    progressCircle.style.strokeDashoffset = offset;
+                }
+                
+                if (countdown < 0) {
+                    clearInterval(countdownInterval);
+                }
+            }, 1000);
+            
+            // Redirect after 6 seconds
+            setTimeout(() => {
+                window.location.href = "https://meet.google.com/chd-pyzz-gnu";
+            }, 6000);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <p>Redirecting to Google Meet in...</p>
+        <div class="loading-circle">
+            <svg class="circle-svg">
+                <circle class="circle-bg" cx="75" cy="75" r="70"></circle>
+                <circle class="circle-progress" cx="75" cy="75" r="70"></circle>
+            </svg>
+            <div class="countdown-number">6</div>
+        </div>
+        <p>If you are not redirected, <a href="https://meet.google.com/chd-pyzz-gnu">click here</a>.</p>
+    </div>
+</body>
+</html>
+
