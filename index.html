@@ -8,6 +8,589 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hero Section with Gradient */
+        .hero-wrapper {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 5rem 2rem;
+            margin: -2rem -2rem 4rem -2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .home-hero {
+            text-align: center;
+            padding: 0;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .home-hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            color: white;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+        
+        .home-hero .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-wrapper .button-group {
+            margin-top: 2rem;
+        }
+        
+        .hero-wrapper .btn {
+            background: white;
+            color: #667eea;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .hero-wrapper .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero-wrapper .btn-outline {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .hero-wrapper .btn-outline:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        .hero-wrapper .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        .hero-wrapper .social-links a:hover {
+            background: white;
+            color: #667eea;
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            padding: 2rem 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        
+        /* Skills Grid */
+        .skills-showcase {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            cursor: default;
+        }
+        
+        .skill-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .skill-item i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.75rem;
+            display: block;
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover i {
+            color: white;
+        }
+        
+        .skill-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        
+        /* Work Sections */
+        .work-section {
+            margin-bottom: 4rem;
+        }
+        
+        .work-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .work-section-header h2 {
+            font-size: 2rem;
+            margin: 0;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .work-section-header a {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .work-section-header a:hover {
+            color: var(--primary-dark);
+            gap: 0.75rem;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+        
+        .exp-card, .proj-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .exp-card::before, .proj-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .exp-card:hover, .proj-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .exp-card:hover::before, .proj-card:hover::before {
+            width: 6px;
+        }
+        
+        .exp-card-header {
+            margin-bottom: 1rem;
+        }
+        
+        .exp-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .exp-card-company {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .exp-card-date {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .exp-card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .proj-card-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .proj-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .proj-card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials-section {
+            background: var(--white);
+            padding: 4rem 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+        }
+        
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .review-card {
+            background: var(--bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+        
+        .review-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .review-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--white);
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .review-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .review-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .cta-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-section .btn {
+            background: white;
+            color: #667eea;
+            font-size: 1.1rem;
+            padding: 15px 40px;
+        }
+        
+        .cta-section .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .calendly-text {
+            margin-top: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .calendly-text:hover {
+            color: white;
+        }
+        
+        .calendly-link-text {
+            color: white;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                padding: 3rem 1.5rem;
+                margin: -1rem -1rem 3rem -1rem;
+            }
+            
+            .home-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .home-hero .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 1rem;
+            }
+            
+            .skill-item {
+                padding: 1rem 0.5rem;
+            }
+            
+            .skill-item i {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .skills-showcase {
+                padding: 2rem 1.5rem;
+            }
+            
+            .testimonials-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+            
+            .cta-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -30,245 +613,270 @@
     <main>
         <div class="container">
             <!-- Hero Section -->
-            <section style="text-align: center; padding: 3rem 0; margin-bottom: 3rem;">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-dark);">Hi, I'm Samarth 👋</h1>
-                <p style="font-size: 1.5rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 400;">
-                    Python Developer | Cloud Engineer | Musician | Thinker
+            <div class="hero-wrapper">
+                <section class="home-hero fade-in-up">
+                    <div class="hero-badge">
+                        <i class="fas fa-heart"></i> Welcome to my corner of the internet
+                    </div>
+                    <h1>Hi, I'm Samarth 👋</h1>
+                    <p class="subtitle">I code, make music, ponder life's mysteries, and yes—I also make a decent therapist</p>
+                    <div class="button-group">
+                        <a href="about.html" class="btn">
+                            <i class="fas fa-user"></i> Get to Know Me
+                        </a>
+                        <a href="hobbies.html" class="btn btn-outline">
+                            <i class="fas fa-guitar"></i> My Passions
+                        </a>
+                        <a href="blog.html" class="btn btn-outline">
+                            <i class="fas fa-book-open"></i> My Thoughts
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="mailto:samarthrawat1@gmail.com" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/samarthrawat1" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://fiverr.com/samarthrawat1" target="_blank" title="Fiverr" aria-label="Fiverr">
+                            <i class="fab fa-fiverr"></i>
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Fun Stats Section -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Cups of Coffee</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">Instruments Played</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2AM</div>
+                    <div class="stat-label">Best Coding Hours</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Existential Questions</div>
+                </div>
+            </section>
+
+            <!-- Skills Showcase -->
+            <section class="skills-showcase">
+                <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="margin-bottom: 0.5rem;">Things I Tinker With</h2>
+                    <div class="section-divider"></div>
+                    <p>The tools that help me bring ideas to life</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <div class="skill-name">Python</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-docker"></i>
+                        <div class="skill-name">Docker</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-dharmachakra"></i>
+                        <div class="skill-name">Kubernetes</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-aws"></i>
+                        <div class="skill-name">AWS</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-google"></i>
+                        <div class="skill-name">GCP</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <div class="skill-name">Databases</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-git-alt"></i>
+                        <div class="skill-name">Git</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <div class="skill-name">LLMs</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Personal Intro -->
+            <section style="text-align: center; padding: 3rem 2rem; margin-bottom: 2rem;">
+                <p style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                    I'm a software engineer who believes that the best code is written with intention, 
+                    the best music is played with feeling, and the best conversations happen when we're 
+                    curious and genuine. When I'm not architecting cloud infrastructure or debugging async code, 
+                    you'll find me strumming a guitar, diving into philosophy, or pondering why we exist. 🤔
                 </p>
-                <p style="font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 2rem;">
-                    Building things with code, exploring the cloud, making music, and pondering life's big questions.
-                </p>
-                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <a href="resume.pdf" target="_blank" class="resume-button">
-                        <i class="fas fa-file-pdf"></i> View Resume
-                    </a>
-                    <a href="contact.html" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i> Get In Touch
-                    </a>
-                    <a href="about.html#experience" class="btn btn-outline">
-                        <i class="fas fa-briefcase"></i> Professional Experience
-                    </a>
+            </section>
+
+            <!-- Experience Section -->
+            <section class="work-section">
+                <div class="work-section-header">
+                    <h2><i class="fas fa-briefcase"></i> What I've Been Up To</h2>
+                    <a href="about.html#experience">More Details <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                    <a href="mailto:samarthrawat1@gmail.com" title="Email" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/samarthrawat1" target="_blank" title="LinkedIn" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/samarthrawat1" target="_blank" title="GitHub" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://fiverr.com/samarthrawat1" target="_blank" title="Fiverr" style="font-size: 1.5rem; color: var(--text-gray); transition: var(--transition);">
-                        <i class="fab fa-fiverr"></i>
-                    </a>
+                
+                <div class="cards-grid">
+                    <article class="exp-card">
+                        <div class="exp-card-header">
+                            <h4 class="exp-card-title">Founding Engineer</h4>
+                            <p class="exp-card-company">Tensorfuse (YC W24)</p>
+                            <span class="exp-card-date">
+                                <i class="far fa-calendar-alt"></i> July 2025 – Present
+                            </span>
+                        </div>
+                        <p class="exp-card-desc">Architected scalable async Django backend with Kubernetes autoscaling (Knative & KEDA), reducing infrastructure costs and improving system reliability.</p>
+                    </article>
+
+                    <article class="exp-card">
+                        <div class="exp-card-header">
+                            <h4 class="exp-card-title">Founding Engineer</h4>
+                            <p class="exp-card-company">AlchemystAI</p>
+                            <span class="exp-card-date">
+                                <i class="far fa-calendar-alt"></i> April 2024 – June 2025
+                            </span>
+                        </div>
+                        <p class="exp-card-desc">Secured $300k funding, implemented multi-cluster GKE deployments with RabbitMQ and Kafka, and led LLM hosting infrastructure.</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- Professional Experience Preview -->
-            <section style="margin-bottom: 3rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                    <h2 style="margin: 0; font-size: 2rem;">Professional Experience</h2>
-                    <a href="about.html#experience" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
-                        View Full Experience <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
-                    </a>
+            <!-- Projects Section -->
+            <section class="work-section">
+                <div class="work-section-header">
+                    <h2><i class="fas fa-lightbulb"></i> Things I've Built</h2>
+                    <a href="projects.html">See More <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="grid grid-2" style="gap: 2rem;">
-                    <!-- Tensorfuse -->
-                    <div class="card">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Founding Engineer | Infrastructure & Backend</h3>
-                                <p style="color: var(--primary-color); font-weight: 700; margin: 0;">Tensorfuse (YC W24)</p>
-                            </div>
-                            <span style="color: var(--text-muted); font-size: 0.9rem; white-space: nowrap;">July 2025 – Present</span>
+                
+                <div class="cards-grid">
+                    <article class="proj-card">
+                        <div class="proj-card-icon">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Bengaluru, IN</p>
-                        <p style="margin-bottom: 1rem;">Designed and implemented scalable backend on Async Django, integrated Kubernetes extensions (Knative & KEDA) for GPU-based autoscaling, reducing infrastructure costs significantly.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-                            <span class="tech-badge" style="font-size: 0.75rem;">Django</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">Kubernetes</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">AWS</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">vLLM</span>
+                        <h4 class="proj-card-title">AxisHR</h4>
+                        <p class="proj-card-desc">AI-powered candidate screening platform with automated CV analysis and intelligent pre-interview question generation.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Django</span>
+                            <span class="tech-badge">LLM</span>
+                            <span class="tech-badge">GCP</span>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- AlchemystAI -->
-                    <div class="card">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
-                            <div>
-                                <h3 style="margin-bottom: 0.5rem; font-size: 1.25rem;">Founding Engineer | DevOps & Cloud</h3>
-                                <p style="color: var(--primary-color); font-weight: 700; margin: 0;">AlchemystAI</p>
-                            </div>
-                            <span style="color: var(--text-muted); font-size: 0.9rem; white-space: nowrap;">April 2024 – June 2025</span>
+                    <article class="proj-card">
+                        <div class="proj-card-icon">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Bengaluru, IN</p>
-                        <p style="margin-bottom: 1rem;">Collaborated to secure $300k funding, orchestrated multi-cluster GKE deployments, managed DevOps operations for LLM hosting. Reduced onboarding time by 33%.</p>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
-                            <span class="tech-badge" style="font-size: 0.75rem;">FastAPI</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">Kubernetes</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">GKE</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">RabbitMQ</span>
+                        <h4 class="proj-card-title">Redfin Scraper</h4>
+                        <p class="proj-card-desc">Real estate data scraper with Excel export and Zapier integration for automated property listing analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Flask</span>
+                            <span class="tech-badge">SQLite3</span>
+                            <span class="tech-badge">Zapier</span>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </section>
 
-            <!-- Projects Preview -->
-            <section style="margin-bottom: 3rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-                    <h2 style="margin: 0; font-size: 2rem;">Featured Projects</h2>
-                    <a href="projects.html" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
-                        View All Projects <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
-                    </a>
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <div class="section-header">
+                    <h2>Kind Words From People</h2>
+                    <div class="section-divider"></div>
+                    <p>Working with awesome folks has been a privilege</p>
                 </div>
-                <div class="grid grid-3" style="gap: 1.5rem;">
-                    <div class="project-card">
-                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-brain"></i> AxisHR</h3>
-                        <p style="font-size: 0.9rem;">LLM-based candidate screening platform with automated CV screening and pre-interview question generation.</p>
-                        <div class="project-tech" style="margin-top: 1rem;">
-                            <span class="tech-badge" style="font-size: 0.75rem;">Django</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">LLM</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">GCP</span>
+                <div class="review-grid">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
                         </div>
-                    </div>
-                    <div class="project-card">
-                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-home"></i> Redfin Scraper</h3>
-                        <p style="font-size: 0.9rem;">Web scraping platform that extracts property data from Redfin.com with Excel export and Zapier integration.</p>
-                        <div class="project-tech" style="margin-top: 1rem;">
-                            <span class="tech-badge" style="font-size: 0.75rem;">Flask</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">SQLite3</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">Zapier</span>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3 style="margin-bottom: 0.75rem;"><i class="fas fa-robot"></i> Reservation Bot</h3>
-                        <p style="font-size: 0.9rem;">Automated Spanish consulate reservation booking system with email notifications and continuous monitoring.</p>
-                        <div class="project-tech" style="margin-top: 1rem;">
-                            <span class="tech-badge" style="font-size: 0.75rem;">Python</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">Selenium</span>
-                            <span class="tech-badge" style="font-size: 0.75rem;">Azure</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Testimonials Section -->
-            <section style="margin-bottom: 3rem;">
-                <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2rem;">Client Reviews</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-                    <!-- Review 1 -->
-                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                        </div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
-                            "Samarthrawat exceeded expectations. I truly appreciated his dedication, diligence, and professionalism. A freelancer with that core of providing excellence is hard to come by. A million times THANK YOU!!!!"
+                        <p class="review-text">
+                            "Samarthrawat exceeded expectations. I truly appreciated his dedication, diligence, and professionalism. A freelancer with that core of providing excellence is hard to come by."
                         </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
-                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
-                                JK
-                            </div>
+                        <div class="review-author">
+                            <div class="review-avatar">JK</div>
                             <div>
-                                <div style="font-weight: 700; font-size: 0.9rem;">Jen Kellams</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States • Repeat Client</div>
+                                <div class="review-name">Jen Kellams</div>
+                                <div class="review-location">United States • Repeat Client</div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Review 2 -->
-                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
                         </div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
+                        <p class="review-text">
                             "I could not be happier working with Sam! His program did exactly what we hoped it would. He was kind and patient explaining the code. I'll be telling everyone to use him for all coding needs."
                         </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
-                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
-                                JK
-                            </div>
+                        <div class="review-author">
+                            <div class="review-avatar">JK</div>
                             <div>
-                                <div style="font-weight: 700; font-size: 0.9rem;">Jen Kellams</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States • Repeat Client</div>
+                                <div class="review-name">Jen Kellams</div>
+                                <div class="review-location">United States • Repeat Client</div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Review 3 -->
-                    <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
-                        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
-                            <i class="fas fa-star" style="color: #ffc107; font-size: 0.9rem;"></i>
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
+                            <i class="fas fa-star" style="color: #ffc107;"></i>
                         </div>
-                        <p style="font-style: italic; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6; font-size: 0.9rem;">
+                        <p class="review-text">
                             "I had an amazing experience! His attention to detail and code expertise were top-notch. He consistently went ABOVE AND BEYOND."
                         </p>
-                        <div style="display: flex; align-items: center; gap: 0.75rem; padding-top: 1rem; border-top: 1px solid var(--bg-color);">
-                            <div style="width: 40px; height: 40px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 700; font-size: 0.9rem;">
-                                L
-                            </div>
+                        <div class="review-author">
+                            <div class="review-avatar">L</div>
                             <div>
-                                <div style="font-weight: 700; font-size: 0.9rem;">lsteezy</div>
-                                <div style="font-size: 0.8rem; color: var(--text-muted);">United States</div>
+                                <div class="review-name">lsteezy</div>
+                                <div class="review-location">United States</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align: center;">
-                    <a href="https://fiverr.com/samarthrawat1" target="_blank" class="btn btn-outline" style="text-decoration: none; display: inline-flex;">
+                <div class="button-group">
+                    <a href="https://fiverr.com/samarthrawat1" target="_blank" class="btn btn-outline" style="color: var(--primary-color); border-color: var(--primary-color);">
                         <i class="fab fa-fiverr"></i> View More Reviews on Fiverr
                     </a>
                 </div>
             </section>
 
-            <!-- Quick Links -->
-            <section>
-                <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
-                    <a href="about.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
-                        <i class="fas fa-user" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
-                        <div style="font-weight: 700; margin-bottom: 0.25rem;">About</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">Learn more about me</div>
-                    </a>
-                    <a href="projects.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
-                        <i class="fas fa-code" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
-                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Projects</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">See my work</div>
-                    </a>
-                    <a href="blog.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
-                        <i class="fas fa-book" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
-                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Blog</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">Read my thoughts</div>
-                    </a>
-                    <a href="hobbies.html" style="text-decoration: none; color: var(--text-dark); transition: var(--transition);">
-                        <i class="fas fa-heart" style="font-size: 2rem; color: var(--primary-color); display: block; margin-bottom: 0.5rem;"></i>
-                        <div style="font-weight: 700; margin-bottom: 0.25rem;">Hobbies</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">My interests</div>
-                    </a>
-                </div>
-            </section>
-
-            <!-- Footer Note -->
-            <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted); font-style: italic; max-width: 800px; margin-left: auto; margin-right: auto;">
-                We can talk about Python, Cloud, Kubernetes, Music, Guitar, Harmonium, LLM, Anime, Chess, weird ideas, philosophy. Anything really! 
-                <strong>P.S. I also make a good therapist.</strong>
-            </p>
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <p class="calendly-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samarthrawat1/talk'}); return false;" style="cursor: pointer; color: var(--text-muted);">
-                    Wanna have a chat? <span class="calendly-link-text">Schedule a call on Calendly</span>
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Let's Connect!</h2>
+                <p>
+                    Want to talk about Python, Kubernetes, the meaning of life, or why pineapple belongs on pizza? 
+                    Maybe you need help with a project, or just want to jam about music and philosophy. 
+                    I'm always down for interesting conversations. <strong>Remember—I also make a decent therapist!</strong>
                 </p>
-            </div>
+                <a href="contact.html" class="btn">
+                    <i class="fas fa-comments"></i> Let's Chat
+                </a>
+                <p class="calendly-text" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samarthrawat1/talk'}); return false;">
+                    Or <span class="calendly-link-text">schedule a call on Calendly</span> if you prefer planning ahead
+                </p>
+            </section>
         </div>
     </main>
 
@@ -293,14 +901,5 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <script src="js/main.js"></script>
-    <style>
-        a[href*="about.html"]:hover,
-        a[href*="projects.html"]:hover,
-        a[href*="blog.html"]:hover,
-        a[href*="hobbies.html"]:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-    </style>
 </body>
 </html>
